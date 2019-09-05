@@ -1,9 +1,6 @@
 const routes = require('express').Router()
+const control = require('../controller/User')
 
-routes.get('/login', (req, res) =>{
-    res.send('This is a page of login')
-})
-routes.get('/register', (req, res)=>{
-    res.send('This is a page of register')
-})
+routes.get('/login', control.login)
+routes.get('/register', control.register)
 module.exports = routes
