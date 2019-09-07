@@ -1,13 +1,11 @@
 const control = require('../controller/User')
 const routes = require('express').Router()
-routes.get('/register', (req, res)=>{
-    name = req.query.name
-    pass = req.query.pass
+routes.post('/register', (req, res)=>{
+    name = req.body.name
+    pass = req.body.pass
     control.reg(name, pass)
-    res.send(`Enviado com sucesso o nome ${req.query.name}`)
+    res.send(`Enviado com sucesso o nome ${req.body.name}`)
 })
-routes.get('/registers',(req, res)=>{
-    
-})
+
 console.log(process.env.DATA)
 module.exports = routes

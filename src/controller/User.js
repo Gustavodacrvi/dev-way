@@ -2,7 +2,8 @@ const db = require('../database/config')
 
 function registerUser(name, password){
     let people = {login: name, pass: password}
-    db.query("INSERT INTO Users SET ?", people, (err, rows)=>{
+    let sql ="INSERT INTO Users SET ?"
+    db.query(sql, people, (err, rows)=>{
         if(err) throw err
         console.log(rows)
     })
