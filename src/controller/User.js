@@ -1,32 +1,16 @@
-const mysql = require('mysql')
-require('dotenv').config
-const connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password = process.env.PASS,
-    database = process.env.DATA
-})
-connection.connect()
+const db = require('../database/config')
 
-function userLogin() {
-
+function registerUser(name, pass){
+    db.cnn.exec("INSERT INTO Users(name, password) VALUES("+name+","+pass+")", (rows, err)=>{
+        if(err) console.log("Erro ao executar o registro")
+    })
 }
-
-function userRegister(name, pass){
-    connection.query(`INSERT INTO Users(name, password) VALUES(${name, pass})`)
+function updateUser(name, pass, id){
+    db.cnn.exec("UPDATE Users SET name="+name, +"pasword="+ pass+ "WHERE id="+id, (rows, err)=>{
+        if(err) console.log("Erro ao atualizar")
+    })
 }
-
-function userUpdate() {
-    
-}
-
-function userDelete() {
-    
-}
-
-module.exports = {
-    login:userLogin(),
-    register:userRegister(),
-    update:userUpdate(),
-    delete:userDelete()
+module.exports ={
+    reg: registerUser,
+    upd: updateUser
 }
