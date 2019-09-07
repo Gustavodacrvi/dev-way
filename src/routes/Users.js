@@ -7,7 +7,7 @@ routes.get('/register', (req, res)=>{
     res.send(`Enviado com sucesso o nome ${req.query.name}`)
 })
 routes.get('/registers',(req, res)=>{
-    control.reg('Gustavo', 'aaa')
+    
 })
 console.log(process.env.DATA)
 module.exports = routes

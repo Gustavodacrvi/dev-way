@@ -1,8 +1,10 @@
 const db = require('../database/config')
 
-function registerUser(name, pass){
-    db.query("INSERT INTO Users(name, password) VALUES("+name+","+pass+")", (rows, err)=>{
-        if(!err) console.log('Usuário cadastrado com sucesso')
+function registerUser(name, password){
+    let people = {login: name, pass: password}
+    db.query("INSERT INTO Users SET ?", people, (err, rows)=>{
+        if(err) throw err
+        console.log(rows)
     })
 }
 function updateUser(name, pass, id){
