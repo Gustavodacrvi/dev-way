@@ -12,6 +12,13 @@ routes.post('/login', (req, res)=>{
     control.login(name, pass)
     res.redirect('/')
 })
+routes.post('/update', (req, res)=>{
+    name = req.body.login,
+    pass = req.body.pass,
+    id = req.body.id
+    control.update(name, pass, id)
+    res.redirect('/')
+})
 
 routes.delete('/delete/:id', (req, res)=>{
     id = req.params.id
