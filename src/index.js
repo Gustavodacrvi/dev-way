@@ -10,4 +10,10 @@ app.get('/users', (request, response)=>{
         response.end(JSON.stringify(row))
     })
 })
+app.post('/users/register', (request, response)=>{
+    name = request.body.login
+    pass = request.body.pass
+    control.register(name, pass)
+    response.end(`Enviado com sucesso o nome ${name}`)
+})
 app.listen(3000)
