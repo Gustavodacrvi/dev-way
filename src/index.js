@@ -22,4 +22,11 @@ app.post('/users/login', (request, response)=>{
     control.login(name, pass)
     response.end(`Hello ${name}`)
 })
+app.post('/users/update', (request, response)=>{
+    name = request.body.login,
+    pass = request.body.pass,
+    id = request.body.id
+    control.update(name, pass, id)
+    response.end(`Usuário ${name} atualizado com sucesso`)
+})
 app.listen(3000)
