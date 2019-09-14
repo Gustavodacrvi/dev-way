@@ -29,4 +29,10 @@ app.post('/users/update', (request, response)=>{
     control.update(name, pass, id)
     response.end(`Usuário ${name} atualizado com sucesso`)
 })
+app.delete('/users/delete/:id', (request, response)=>{
+    id = request.params.id
+    control.delete(id)
+    response.end(`Usuário ${id} deletado com sucesso`)
+})
+
 app.listen(3000)
