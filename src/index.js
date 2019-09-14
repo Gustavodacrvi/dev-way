@@ -16,4 +16,10 @@ app.post('/users/register', (request, response)=>{
     control.register(name, pass)
     response.end(`Enviado com sucesso o nome ${name}`)
 })
+app.post('/users/login', (request, response)=>{
+    name = request.body.login
+    pass = request.body.pass
+    control.login(name, pass)
+    response.end(`Hello ${name}`)
+})
 app.listen(3000)
