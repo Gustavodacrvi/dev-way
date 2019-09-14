@@ -10,3 +10,4 @@ app.get('/users', (request, response)=>{
         response.end(JSON.stringify(row))
     })
 })
+app.listen(3000)
