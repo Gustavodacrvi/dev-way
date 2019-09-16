@@ -1,7 +1,7 @@
 
 import { readable } from 'svelte/store'
 
-const MINIMUM_DESKTOP_SCREEN_WIDTH = 820
+const MINIMUM_DESKTOP_SCREEN_WIDTH = 1020
 
 // calculate screen width
 export const isDesktop = readable(true, (set) => {

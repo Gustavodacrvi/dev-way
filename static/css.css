@@ -7,10 +7,17 @@
 :root {
   --back-color: #1C1B1B;
   --card-color: #232222;
+  --white: #E2E1E1;
+  --blue: #3D6FD0;
+  --font-family: "Work Sans";
 }
 
 body {
-  font-family: "Work Sans";
+  font-family: var(--font-family);
   margin: 0;
   background-color: var(--back-color);
+}
+
+.txt {
+  color: var(--white);
 }
