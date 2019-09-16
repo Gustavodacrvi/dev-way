@@ -6,9 +6,11 @@
 
 :root {
   --back-color: #1C1B1B;
+  --card-color: #232222;
 }
 
 body {
   font-family: "Work Sans";
+  margin: 0;
   background-color: var(--back-color);
 }
