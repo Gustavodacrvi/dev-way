@@ -4,6 +4,10 @@
   export let segment
   
   let big = true
+
+  const isActive = (name) => {
+    return name === segment
+  }
 </script>
 
 <style>
@@ -59,6 +63,17 @@
   border: 2px solid var(--blue);
 }
 
+.link {
+  color: var(--white);
+  text-decoration: none;
+  margin-right: 14px;
+  transition-duration: .2s;
+}
+
+.link:hover, .link.selected {
+  color: var(--blue);
+}
+
 </style>
 
 <nav class="nav">
@@ -66,7 +81,9 @@
   <div class="centralize">
     <input class="search" autocomplete="off" placeholder="Pesquisar..."/>
     <div>
-      <span>asçldkfjasçdf</span>
+      <a class="link" class:selected={isActive("posts")} href="/posts">Posts</a>
+      <a class="link" class:selected={isActive("entrar")} href="/entrar">Entrar</a>
+      <a class="link" class:selected={isActive("junte-se")} href="/junte-se">Junte-se</a>
     </div>
   </div>
 </nav>
