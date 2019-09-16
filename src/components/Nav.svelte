@@ -12,12 +12,15 @@
 
 <style>
 
+.nav, .centralize {
+  display: flex;
+}
+
 .nav {
   background-color: var(--card-color);
   height: 55px;
   padding: 0 20px;
   position: relative;
-  display: flex;
 }
 
 .title {
@@ -34,7 +37,6 @@
 .centralize {
   flex-basis: 100%;
   height: 100%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
