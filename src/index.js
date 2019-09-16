@@ -1,15 +1,38 @@
-const express = require('express')
+const polka = require('polka')
 const bodyParser = require('body-parser')
-const app = express()
-app.use(express.json())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
-app.use('/users', require('./routes/Users'))
 const db = require('./database/config')
-app.get('/', (req, res)=>{
-    db.query("SELECT * FROM Users",(err,row)=>{
-        if(err) res.send(err)
-        res.send(row)
+const control = require('./controller/User')
+const app = polka()
+app.use(bodyParser.json())
+app.get('/users', (request, response)=>{
+    db.query("SELECT * FROM Users", (err, row)=>{
+        if(err) response.end(JSON.stringify(err))
+        response.end(JSON.stringify(row))
     })
 })
-module.exports = app
+app.post('/users/register', (request, response)=>{
+    name = request.body.login
+    pass = request.body.pass
+    control.register(name, pass)
+    response.end(`Enviado com sucesso o nome ${name}`)
+})
+app.post('/users/login', (request, response)=>{
+    name = request.body.login
+    pass = request.body.pass
+    control.login(name, pass)
+    response.end(`Hello ${name}`)
+})
+app.post('/users/update', (request, response)=>{
+    name = request.body.login,
+    pass = request.body.pass,
+    id = request.body.id
+    control.update(name, pass, id)
+    response.end(`Usuário ${name} atualizado com sucesso`)
+})
+app.delete('/users/delete/:id', (request, response)=>{
+    id = request.params.id
+    control.delete(id)
+    response.end(`Usuário ${id} deletado com sucesso`)
+})
+
+app.listen(3000)
