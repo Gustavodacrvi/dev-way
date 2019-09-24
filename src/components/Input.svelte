@@ -15,7 +15,7 @@
   <input
     class="input"
     autocomplete="off"
-    placeholder={placeholder}
+    {placeholder}
     bind:value={str}
     on:input={() => dispatch('update', {str})}>
 </div>

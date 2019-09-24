@@ -21,12 +21,11 @@ export const isDesktop = readable(true, (set) => {
   }
 })
 export const popUp = writable({comp: null})
-export const toasts = writable([])
+export const toastsQueue = writable([])
 
-/* 
-  {
-    name: 'asdfasdf',
-    seconds: ,
-    callback: () => {}
-  }
- */
+export const addToast = (toast) => {
+  toastsQueue.update(arr => {
+    arr.unshift(toast)
+    return arr
+  })
+}

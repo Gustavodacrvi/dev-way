@@ -2,7 +2,7 @@
   import Input from './../Input.svelte'
   import Button from './../Button.svelte'
 
-  import { toasts } from './../../store/'
+  import { addToast } from './../../store/'
 
   let username = ''
   let password = ''
@@ -10,19 +10,21 @@
   $: atLeastOneEmpty = username === '' || password === ''
   $: tooLong = username.length > 100 || password.length > 100
 
-  const toast = (t) => {
-    toasts.unshift(t)
-  }
-
   const sendRequest = () => {
     console.log(username, password)
     if (atLeastOneEmpty) {
-      toast({
+      addToast({
         name: 'Por favor coloque todas as informações.',
         seconds: 3,
         type: 'error',
       })
-    } else if (tooLong) console.log('too long')
+    } else if (tooLong) {
+      addToast({
+        name: 'O número máximo de caracteres é 100.',
+        seconds: 3,
+        type: 'error',
+      })
+    }
     else {
       // faz login
     }
