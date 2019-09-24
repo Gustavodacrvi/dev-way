@@ -1,19 +1,17 @@
 <script>
   import Login from './Popups/Login.svelte'
+  import Forgot from './Popups/Forgot.svelte'
   import { fade } from 'svelte/transition'
 
-  import { popUp } from '../store'
+  import { popUp, pushPopup } from '../store'
 
   let options = {
-    Login,
+    Login, Forgot,
   }
   $: component = options[$popUp.comp]
 
   const hidePopup = () => {
-    popUp.update(v => {
-      v.comp = null
-      return v
-    })
+    pushPopup({name: null})
   }
 
 </script>

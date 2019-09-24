@@ -1,5 +1,5 @@
 <script>
-  import { isDesktop, popUp } from '../store'
+  import { isDesktop, popUp, pushPopup } from '../store'
 
   export let segment
   
@@ -7,15 +7,6 @@
 
   const isActive = (name) => {
     return name === segment
-  }
-
-  const pop = (compName) => {
-    return () => {
-      popUp.update(v => {
-        v.comp = compName
-        return v
-      })
-    }
   }
 </script>
 
@@ -94,7 +85,7 @@
     <input class="search" autocomplete="off" placeholder="Pesquisar..."/>
     <div>
       <a class="link" class:selected={isActive("posts")} href="/posts">Posts</a>
-      <span class="link" on:click={pop('Login')}>Entrar</span>
+      <span class="link" on:click={() => pushPopup({comp: 'Login'})}>Entrar</span>
       <a class="link" class:selected={isActive("junte-se")} href="/junte-se">Junte-se</a>
     </div>
   </div>

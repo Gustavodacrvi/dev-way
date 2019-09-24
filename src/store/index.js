@@ -23,6 +23,12 @@ export const isDesktop = readable(true, (set) => {
 export const popUp = writable({comp: null})
 export const toastsQueue = writable([])
 
+export const pushPopup = (pop) => {
+  popUp.update(v => {
+    v = pop
+    return v
+  })
+}
 export const addToast = (toast) => {
   toastsQueue.update(arr => {
     arr.unshift(toast)

@@ -2,7 +2,7 @@
   import Input from './../Input.svelte'
   import Button from './../Button.svelte'
 
-  import { addToast } from './../../store/'
+  import { addToast, popUp, pushPopup } from './../../store/'
 
   let username = ''
   let password = ''
@@ -25,14 +25,20 @@
       })
     }
     else {
-      // faz login
+
     }
+  }
+  const pop = (name) => () => {
+    pushPopup({name: null})
+    setTimeout(() => {
+      pushPopup({comp: name})
+    }, 200)
   }
   
 </script>
 
 <div class="card cb">
-  <h1 class="title">Bem Vindo,</h1>
+  <h2 class="title">Bem Vindo,</h2>
   <span class="tiny-title">entre na sua conta para continuar</span>
 
   <div class="inputs">
@@ -47,6 +53,7 @@
       value={password}
       on:update={({detail}) => password = detail.str}
     />
+    <span class="link" on:click={pop('Forgot')}>Esqueceu sua senha ou nome de usuário seu <strong>otário</strong>?</span>
   </div>
   <div class="button">
     <Button value="Continuar" on:click={sendRequest}/>
@@ -63,6 +70,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.link {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .card {

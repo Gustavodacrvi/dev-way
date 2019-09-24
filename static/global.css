@@ -15,6 +15,10 @@
   --red: #DE5757;
 }
 
+.tac {
+  text-align: center;
+}
+
 .cb {
   background-color: var(--card);
 }
