@@ -11,10 +11,9 @@
   $: tooLong = username.length > 100 || password.length > 100
 
   const sendRequest = () => {
-    console.log(username, password)
     if (atLeastOneEmpty) {
       addToast({
-        name: 'Por favor coloque todas as informações.',
+        name: 'Por favor insira todas as informações.',
         seconds: 3,
         type: 'error',
       })
