@@ -9,7 +9,7 @@
 .btn {
   font-family: 'Work Sans';
   color: white;
-  padding: 12px 100px;
+  padding: 10px 100px;
   font-size: 1.1em;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;

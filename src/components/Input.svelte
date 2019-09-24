@@ -9,20 +9,21 @@
 
   let str = value
 
-  const emitEvent = () => {
-    dispatch('update', {str})
-  }
-
 </script>
 
 <div class="wrapper">
-  <input class="input" autocomplete="off" placeholder bind:value={str} on:input={emitEvent}>
+  <input
+    class="input"
+    autocomplete="off"
+    placeholder={placeholder}
+    bind:value={str}
+    on:input={() => dispatch('update', {str})}>
 </div>
 
 <style>
 
 .wrapper {
-  margin: 14px 0;
+  margin: 12px 0;
 }
 
 .input {
@@ -32,7 +33,7 @@
   font-family: 'Work Sans';
   font-size: 1em;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(60,60,60);
   color: var(--white);

@@ -2,34 +2,60 @@
   import Input from './../Input.svelte'
   import Button from './../Button.svelte'
 
-  let nomeUsuario = ''
+  import { toasts } from './../../store/'
+
+  let username = ''
   let password = ''
 
-  const handleName = ({detail}) => {
-    nomeUsuario = detail.str
+  $: atLeastOneEmpty = username === '' || password === ''
+  $: tooLong = username.length > 100 || password.length > 100
+
+  const toast = (t) => {
+    toasts.unshift(t)
   }
-  const handlePassword = ({detail}) => {
-    password = detail.str
+
+  const sendRequest = () => {
+    console.log(username, password)
+    if (atLeastOneEmpty) {
+      toast({
+        name: 'Por favor coloque todas as informações.',
+        seconds: 3,
+        type: 'error',
+      })
+    } else if (tooLong) console.log('too long')
+    else {
+      // faz login
+    }
   }
+  
 </script>
 
-<div class="card">
+<div class="card cb">
   <h1 class="title">Bem Vindo,</h1>
   <span class="tiny-title">entre na sua conta para continuar</span>
 
   <div class="inputs">
-    <Input placeholder="nome do usuário:" value={nomeUsuario} on:update={handleName}/>
-    <Input placeholder="senha:" type="password" value={password} on:update={handlePassword}/>
+    <Input
+      placeholder="nome do usuário:"
+      value={username}
+      on:update={({detail}) => username = detail.str}
+    />
+    <Input
+      placeholder="senha:"
+      type="password"
+      value={password}
+      on:update={({detail}) => password = detail.str}
+    />
   </div>
   <div class="button">
-    <Button value="Continuar"/>
+    <Button value="Continuar" on:click={sendRequest}/>
   </div>
 </div>
 
 <style>
 
 .inputs {
-  margin: 14px 0;
+  padding: 20px 0;
 }
 
 .button {
@@ -42,10 +68,9 @@
   flex-basis: 600px;
   margin: 6px;
   margin-top: 100px;
-  background-color: #232222;
   border-radius: 8px;
   z-index: 50;
-  padding: 50px;
+  padding: 40px;
 }
 
 .title {

@@ -10,6 +10,19 @@
   --white: #E2E1E1;
   --blue: #3D6FD0;
   --font-family: "Work Sans";
+  --card: #232222;
+}
+
+.cb {
+  background-color: var(--card);
+}
+
+body, span, button, textarea {
+  color: var(--white);
+}
+
+.rb {
+  border-radius: 6px;
 }
 
 body {
