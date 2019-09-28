@@ -1,5 +1,5 @@
 
-import { readable } from 'svelte/store'
+import { readable, writable } from 'svelte/store'
 
 const MINIMUM_DESKTOP_SCREEN_WIDTH = 1020
 
@@ -20,3 +20,18 @@ export const isDesktop = readable(true, (set) => {
     window.removeEventListener('resize', eventListener)
   }
 })
+export const popUp = writable({comp: null})
+export const toastsQueue = writable([])
+
+export const pushPopup = (pop) => {
+  popUp.update(v => {
+    v = pop
+    return v
+  })
+}
+export const addToast = (toast) => {
+  toastsQueue.update(arr => {
+    arr.unshift(toast)
+    return arr
+  })
+}
