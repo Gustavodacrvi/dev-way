@@ -1,15 +1,24 @@
 <script>
-  import Nav from '../components/Nav.svelte'
-  import Popup from '../components/Popup.svelte'
-  import Toast from '../components/Toast.svelte'
+  import { onMount } from 'svelte'
 
-	export let segment
+  import NavBar from '../components/NavBar.svelte'
+  import Popup from '../components/Popup/Popup.svelte'
+
+  export let segment
 </script>
 
-<Nav {segment}/>
-<Popup/>
-<Toast/>
+<NavBar {segment}/>
+<Popup {segment}/>
 
-<main>
+<main class="main">
 	<slot></slot>
 </main>
+
+<style>
+
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+</style>

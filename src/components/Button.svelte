@@ -1,28 +1,27 @@
 <script>
+
   export let value
 </script>
 
-<button class="btn" on:click>{value}</button>
+<button class="btn">{value}</button>
 
 <style>
 
 .btn {
-  font-family: 'Work Sans';
+  border-radius: 6px;
+  background-color: var(--primary);
+  padding: 14px 58px;
+  box-shadow: 0 1px 4px var(--primary);
   color: white;
-  padding: 10px 100px;
   font-size: 1.1em;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  box-shadow: none;
-  transition-duration: .2s;
-  cursor: pointer;
   border: none;
-  background-image: linear-gradient(to right,#7184A8, #3D6FD0);
+  cursor: pointer;
+  outline: none;
+  transition-duration: .3s;
 }
 
 .btn:hover {
-  box-shadow: 0 4px 10px rgba(61,111,208, .6);
+  box-shadow: 0 4px 12px var(--primary);
 }
 
 </style>
