@@ -4,13 +4,10 @@
   export let segment
 
   let doc = null
+  let scrollTop = 0
 
   $: act = (route) => segment === route
-
-  onMount(() => {
-    doc = document
-  })
-
+  $: isShadowMode = scrollTop > 50
   $: lineStyle = () => {
     segment
     if (doc) {
@@ -21,9 +18,15 @@
     }
     return ''
   }
+
+  onMount(() => {
+    doc = document
+    window.addEventListener('scroll', () => scrollTop = window.scrollY)
+    lineStyle()
+  })
 </script>
 
-<div class="NavBar">
+<div class="NavBar" class:shadow={isShadowMode}>
   <div class="wrapper">
     <div class="logo">DEV WAY</div>
     <div class="links">
@@ -32,6 +35,7 @@
       <a href="/contato" class="link" class:active={act('contato')}>Contato</a>
     </div>
     <div class="options">
+
     </div>
     <span class="line" style={lineStyle()}></span>
   </div>
@@ -75,7 +79,19 @@
 
 .NavBar {
   border-bottom: 1px solid var(--light-gray);
-  height: 75px;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition-duration: .4s;
+  background-color: white;
+}
+
+.shadow {
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(100,100,100,.2);
+  border: none;
 }
 
 </style>
