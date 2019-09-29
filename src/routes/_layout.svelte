@@ -6,6 +6,15 @@
 
 <NavBar {segment}/>
 
-<main>
+<main class="main">
 	<slot></slot>
 </main>
+
+<style>
+
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+</style>

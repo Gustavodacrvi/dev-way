@@ -91,6 +91,7 @@
   left: 0;
   transition-duration: .4s;
   background-color: white;
+  z-index: 10;
 }
 
 .fake-navbar {
