@@ -1,63 +1,17 @@
 <script>
+  import Btn from '../components/Button.svelte'
 
 </script>
 
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
-<h1>home</h1>
+<div class="content">
+  <h1>Notícias de tecnologia e é</h1>
+  <Btn value="Venha se divertir!"/>
+</div>
+
+<style>
+
+.content {
+  margin: 0 150px;
+}
+
+</style>

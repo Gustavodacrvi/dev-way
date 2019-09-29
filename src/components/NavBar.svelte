@@ -40,12 +40,17 @@
     <span class="line" style={lineStyle()}></span>
   </div>
 </div>
+<div class="fake-navbar"></div>
 
 <style>
 
+.links {
+  margin-left: -145px;
+}
+
 .line {
   position: absolute;
-  height: 3px;
+  height: 4px;
   border-radius: 6px;
   width: 100px;
   background-color: var(--primary);
@@ -55,7 +60,7 @@
 
 .link {
   text-decoration: none;
-  padding: 0 13px;
+  padding: 0 16px;
   font-size: 1.1em;
   transition: color .3s;
 }
@@ -86,6 +91,10 @@
   left: 0;
   transition-duration: .4s;
   background-color: white;
+}
+
+.fake-navbar {
+  height: 80px;
 }
 
 .shadow {
