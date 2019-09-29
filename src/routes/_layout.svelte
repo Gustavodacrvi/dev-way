@@ -1,10 +1,14 @@
 <script>
-  import NavBar from '../components/NavBar.svelte'
+  import { onMount } from 'svelte'
 
-	export let segment
+  import NavBar from '../components/NavBar.svelte'
+  import Popup from '../components/Popup/Popup.svelte'
+
+  export let segment
 </script>
 
 <NavBar {segment}/>
+<Popup {segment}/>
 
 <main class="main">
 	<slot></slot>
