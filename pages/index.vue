@@ -1,31 +1,43 @@
 <template>
   <div class="index">
-    <p>f</p>
-    <p>f</p>
-    <p>f</p>
-    <p>f</p>
-    <p>f</p>
-    <p>f</p>
     <ButtonApp value="Venha se divertir!"/>
+
+    <div class="center">
+      <PostCard class="post"
+        title="Svelte é hype"
+        author='Vinícius Bispo'
+        date="dia 19"
+        duration="4 min"
+        descr="Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se "
+      />
+    </div>
+
   </div>
 </template>
 
 <script>
 
-import Logo from '~/components/Logo.vue'
 import ButtonVue from '../components/Button.vue'
+import PostCardVue from '../components/PostCard.vue'
 
 export default {
   components: {
-    Logo,
-    ButtonApp: ButtonVue
+    ButtonApp: ButtonVue,
+    PostCard: PostCardVue,
   }
 }
 
 </script>
 
-<style>
+<style scoped>
 
+.center {
+  display: flex;
+  justify-content: center;
+}
 
+.post {
+  flex-basis: 700px;
+}
 
 </style>

@@ -1,0 +1,22 @@
+{
+  "bundler": "rollup",
+  "shimport": "1.0.1",
+  "assets": {
+    "main": "client.68712a1c.js"
+  },
+  "css": {
+    "main": "main.824291062.css",
+    "chunks": {
+      "index.svelte": [],
+      "contato.svelte": [
+        "contato.8277260e.css"
+      ],
+      "posts.svelte": [
+        "posts.efbf9d5c.css"
+      ],
+      "home.svelte": [
+        "home.af57185f.css"
+      ]
+    }
+  }
+}
