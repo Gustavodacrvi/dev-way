@@ -10,6 +10,7 @@
     <div class="icons">
       <Icon name="comment"/>
       <Icon name="upvote"/>
+      <Icon name="share"/>
     </div>
   </div>
 </template>
