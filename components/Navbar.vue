@@ -42,7 +42,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .NavBar {
     border-bottom: 1px solid rgba(100,100,100, .4);

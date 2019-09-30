@@ -1,55 +1,27 @@
 <template>
   <div class="index">
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
-    <p>shadow mode</p>
+    <p>f</p>
+    <p>f</p>
+    <p>f</p>
+    <p>f</p>
+    <p>f</p>
+    <p>f</p>
+    <ButtonApp value="Venha se divertir!"/>
   </div>
 </template>
 
 <script>
 
 import Logo from '~/components/Logo.vue'
+import ButtonVue from '../components/Button.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    ButtonApp: ButtonVue
   }
 }
+
 </script>
 
 <style>
