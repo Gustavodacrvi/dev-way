@@ -7,13 +7,17 @@
       <span>{{ duration }}</span>
     </div>
     <p class="descr">{{ descr }}</p>
+    <div class="icons">
+      <svg-icon name="comment" width="20px" height="20px"/>
+    </div>
   </div>
 </template>
 
 <script>
 
 export default {
-  props: ['title', 'author', 'date', 'duration', 'descr'],
+  props: ['title', 'author', 'date', 'duration', 'descr',
+  'views'],
 }
 
 </script>

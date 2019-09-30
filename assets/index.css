@@ -14,7 +14,8 @@ body {
   --txt-color: #707070;
 }
 
-body, input, button, textarea {
+body, input, button, textarea, svg, path {
   font-family: "Foco";
   color: var(--txt-color);
+  fill: var(--txt-color);
 }
