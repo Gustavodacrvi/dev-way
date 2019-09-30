@@ -8,16 +8,22 @@
     </div>
     <p class="descr">{{ descr }}</p>
     <div class="icons">
-      <svg-icon name="comment" width="20px" height="20px"/>
+      <Icon name="comment"/>
+      <Icon name="upvote"/>
     </div>
   </div>
 </template>
 
 <script>
 
+import IconVue from './Icon.vue'
+
 export default {
   props: ['title', 'author', 'date', 'duration', 'descr',
   'views'],
+  components: {
+    Icon: IconVue,
+  }
 }
 
 </script>

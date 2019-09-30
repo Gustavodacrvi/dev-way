@@ -11,9 +11,6 @@
         descr="Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se Foda-se "
       />
     </div>
-
-    <Icon name="comment"/>
-
   </div>
 </template>
 
@@ -21,13 +18,11 @@
 
 import ButtonVue from '../components/Button.vue'
 import PostCardVue from '../components/PostCard.vue'
-import IconVue from '../components/Icon.vue'
 
 export default {
   components: {
     ButtonApp: ButtonVue,
     PostCard: PostCardVue,
-    Icon: IconVue,
   }
 }
 
