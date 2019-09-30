@@ -12,6 +12,8 @@
       />
     </div>
 
+    <svg-icon name="inbox"/>
+
   </div>
 </template>
 
