@@ -23,6 +23,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/index.css',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -39,9 +40,13 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/svg-sprite',
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
+    '@nuxtjs/pwa'
   ],
+  svgSprite: {
+    // manipulate module options
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
