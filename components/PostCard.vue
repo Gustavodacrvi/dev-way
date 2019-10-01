@@ -8,10 +8,22 @@
     </div>
     <p class="descr">{{ descr }}</p>
     <div class="icons">
-      <Icon name="comment"/>
-      <Icon name="upvote"/>
-      <Icon name="share"/>
-      <Icon name="view"/>
+      <div class="group">
+        <Icon class="hover o" name="view" title="Views"/>
+        <span class="o">{{ views }}</span>
+      </div>
+      <div class="group">
+        <Icon class="hover o" name="upvote" title="Upvotes"/>
+        <span class="o">{{ upvotes }}</span>
+      </div>
+      <div class="group">
+        <Icon class="hover o" name="comment" title="Comments"/>
+        <span class="o">{{ comments }}</span>
+      </div>
+      <div class="group">
+        <Icon class="hover o" name="share" title="Shares"/>
+        <span class="o">{{ shares }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -22,7 +34,7 @@ import IconVue from './Icon.vue'
 
 export default {
   props: ['title', 'author', 'date', 'duration', 'descr',
-  'views'],
+  'views', 'views', 'upvotes', 'comments', 'shares'],
   components: {
     Icon: IconVue,
   }
@@ -54,6 +66,17 @@ export default {
 
 .descr {
   opacity: .8;
+}
+
+.group {
+  display: inline-block;
+  margin-right: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.o {
+  margin-right: 10px;
 }
 
 </style>
