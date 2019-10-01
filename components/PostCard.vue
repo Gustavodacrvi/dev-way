@@ -11,6 +11,7 @@
       <Icon name="comment"/>
       <Icon name="upvote"/>
       <Icon name="share"/>
+      <Icon name="view"/>
     </div>
   </div>
 </template>
