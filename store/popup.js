@@ -21,7 +21,6 @@ export const mutations = {
   },
   saveWidth(st) {
     st.width = document.offsetWidth
-    console.log(document.offsetWidth)
   },
 }
 

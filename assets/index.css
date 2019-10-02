@@ -20,3 +20,16 @@ body, input, button, textarea, svg, path {
   color: var(--txt-color);
   fill: var(--txt-color);
 }
+
+.shadow, .card {
+  box-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+
+.rb {
+  border-radius: 6px;
+}
+
+.card {
+  background-color: white;
+}
+

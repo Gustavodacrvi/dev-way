@@ -1,6 +1,6 @@
 <template>
-  <div class="Popup">
-    <component v-if="isPopupOpened" :is="popup.comp"/>
+  <div class="Popup rb" @click="hide">
+    <component :is="popup.comp"/>
   </div>
 </template>
 
@@ -14,18 +14,15 @@ export default {
   components: {
     Login: LoginVue,
   },
-  created() {
-    setTimeout(() => {
-      this.$store.dispatch('popup/pushPopup', {comp: 'Login'})
-    }, 1000)
+  methods: {
+    hide() {
+      this.$store.dispatch('popup/pushPopup', null)
+    }
   },
   computed: {
     ...mapState({
       popup: state => state.popup.popup,
       width: state => state.popup.width,
-    }),
-    ...mapGetters({
-      isPopupOpened: 'popup/isPopupOpened',
     }),
   }
 }
@@ -43,10 +40,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.card {
-
+  z-index: 100;
 }
 
 </style>
