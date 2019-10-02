@@ -2,8 +2,8 @@
   <div>
     <NavBar/>
     <div style="height: 80px"></div>
-    <Popup/>
-    
+    <!-- <Popup/> -->
+
     <nuxt/>
   </div>
 </template>
@@ -17,7 +17,18 @@ export default {
   components: {
     NavBar: NavbarVue,
     Popup: PopupVue,
-  } 
+  },
+  data() {
+    return {
+      asdf: 0,
+    }
+  },
+  fetch(context) {
+    this.asdf = 'nullaçlskjdf'
+    const saveScreenWidth = () => this.$store.dispatch('saveWidth')
+    saveScreenWidth()
+    window.addEventListener('resize', saveScreenWidth)
+  }
 }
 
 </script>

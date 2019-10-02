@@ -20,7 +20,7 @@
 
 <script>
 
-import ButtonVue from '../components/Button.vue'
+import ButtonVue from '../components/Auth/Button.vue'
 import PostCardVue from '../components/PostCard.vue'
 
 export default {

@@ -1,24 +1,31 @@
 <template>
   <div class="Popup">
-    <div class="card">
-      {{ isPopupOpened }}
-    </div>
+    <component v-if="isPopupOpened" :is="popup.comp"/>
   </div>
 </template>
 
 <script>
 
+import LoginVue from './Login.vue'
+
 import { mapState, mapGetters } from 'vuex'
 
 export default {
+  components: {
+    Login: LoginVue,
+  },
   created() {
     setTimeout(() => {
-      this.$store.dispatch('popup/pushPopup', {comp: 'asdf'})
+      this.$store.dispatch('popup/pushPopup', {comp: 'Login'})
     }, 1000)
   },
   computed: {
+    ...mapState({
+      popup: state => state.popup.popup,
+      width: state => state.popup.width,
+    }),
     ...mapGetters({
-      isPopupOpened: 'popup/isPopupOpened'
+      isPopupOpened: 'popup/isPopupOpened',
     }),
   }
 }
@@ -36,6 +43,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card {
+
 }
 
 </style>

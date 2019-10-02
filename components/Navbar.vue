@@ -7,15 +7,27 @@
         <nuxt-link class="link" to="/posts">Posts</nuxt-link>
         <nuxt-link class="link" to="/contato">Contato</nuxt-link>
       </div>
-      <div>açsdlfj</div>
-      <div class="line"></div>
+      <div class="search">
+        <InputApp
+          class="search"
+          placeholder="Pesquisar..."
+          type="text"
+        />
+      </div>
+      <div class="line">
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 
+import InputVue from './Auth/Input.vue'
+
 export default {
+  components: {
+    InputApp: InputVue,
+  },
   mounted() {
     this.moveLine()
     window.addEventListener('resize', this.moveLine)
