@@ -88,12 +88,12 @@ export default {
   height: 3px;
   width: 100px;
   border-radius: 3px;
-  background-color: var(--orange);
+  background-color: var(--primary);
   transition-duration: .2s;
 }
 
 .nuxt-link-exact-active, .link:hover {
-  color: var(--orange);
+  color: var(--primary);
 }
 
 </style>

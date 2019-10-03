@@ -1,5 +1,5 @@
 <template>
-  <div class="Icon">
+  <div class="Icon" @click="$emit('click')">
     <svg-icon class="icon" :name="name" :width="getWidth" :height="getHeight"/>  
     <div v-if="title" class="title">
       {{ title }}

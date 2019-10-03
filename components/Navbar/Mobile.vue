@@ -1,7 +1,7 @@
 <template>
   <div class="Mobile">
     <div class="wrapper">
-      <Icon class="icon" name='menu' width="60px"/>
+      <Icon @click="$emit('open-menu')" class="icon" name='menu' width="60px"/>
       <h3 class="title">DEV WAY</h3>
     </div>
   </div>
@@ -14,7 +14,7 @@ import IconVue from '../Icon.vue'
 export default {
   components: {
     Icon: IconVue
-  }
+  },
 }
 
 </script>
@@ -25,6 +25,7 @@ export default {
   display: flex;
   align-items: center;
   height: 100%;
+  transition: transform .3s;
 }
 
 .wrapper {

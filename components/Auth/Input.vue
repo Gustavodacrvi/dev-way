@@ -68,7 +68,7 @@ export default {
   bottom: -1px;
   left: 0;
   height: 2px;
-  background-color: var(--orange);
+  background-color: var(--primary);
   transition: width .5s;
   width: 0;
 }

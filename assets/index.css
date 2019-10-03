@@ -6,12 +6,14 @@
 
 body {
   margin: 0;
+  transition: background-color .3s;
+  overflow: hidden;
 }
 
 :root {
   --light-gray: #E4E4E4;
   --gray: #434343;
-  --orange: #F5AE5C;
+  --primary: #306060;
   --txt-color: #707070;
 }
 
