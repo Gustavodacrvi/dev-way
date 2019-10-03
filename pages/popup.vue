@@ -1,6 +1,6 @@
 <template>
   <div class="contato">
-    contato
+    popup
   </div>
 </template>
 

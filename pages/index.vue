@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <ButtonApp value="Venha se divertir!"/>
+    <ButtonApp value="Venha se divertir!" @click="$store.dispatch('pushPopup', {comp: 'Login'})"/>
 
     <div class="center">
       <PostCard class="post"
@@ -20,7 +20,7 @@
 
 <script>
 
-import ButtonVue from '../components/Button.vue'
+import ButtonVue from '../components/Auth/Button.vue'
 import PostCardVue from '../components/PostCard.vue'
 
 export default {

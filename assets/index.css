@@ -6,12 +6,14 @@
 
 body {
   margin: 0;
+  transition: background-color .3s;
+  overflow: hidden;
 }
 
 :root {
   --light-gray: #E4E4E4;
   --gray: #434343;
-  --orange: #F5AE5C;
+  --primary: #306060;
   --txt-color: #707070;
 }
 
@@ -19,4 +21,26 @@ body, input, button, textarea, svg, path {
   font-family: "Foco";
   color: var(--txt-color);
   fill: var(--txt-color);
+}
+
+.shadow, .card {
+  box-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+
+.rb {
+  border-radius: 6px;
+}
+
+.card {
+  background-color: white;
+}
+
+.page-enter, .page-leave-to {
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.page-leave, .page-enter-to {
+  opacity: 1;
+  transition: opacity .2s;
 }
