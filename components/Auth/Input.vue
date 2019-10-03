@@ -1,5 +1,5 @@
 <template>
-  <div class="Input">
+  <div class="Input" :class="platform">
     <input
       class="input"
       autocomplete="off"
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   props: ['placeholder', 'type', 'borderLine'],
@@ -19,6 +20,9 @@ export default {
     return {
       focus: false,
     }
+  },
+  computed: {
+    ...mapGetters(['platform'])
   }
 }
 
@@ -50,8 +54,13 @@ export default {
 .form .input {
   padding: 10px;
   border: none;
-  width: 100%;
+  width: 120%;
   border-bottom: 1px solid var(--light-gray);
+}
+
+.Input.mobile .input {
+  padding: 20px;
+  font-size: 1.1em;
 }
 
 .line {
@@ -65,7 +74,7 @@ export default {
 }
 
 .focus {
-  width: 100%;
+  width: 150%;
 }
 
 </style>

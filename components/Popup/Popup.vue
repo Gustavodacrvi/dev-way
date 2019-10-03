@@ -1,6 +1,6 @@
 <template>
   <div class="Popup rb" @click="hide">
-    <component :is="popup.comp"/>
+    <component class="comp" :class="platform" :is="popup.comp"/>
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
     ...mapState({
       popup: state => state.popup,
     }),
+    ...mapGetters(['platform'])
   }
 }
 
@@ -42,6 +43,12 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 100;
+}
+
+.comp.mobile {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 </style>
