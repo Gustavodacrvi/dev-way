@@ -95,11 +95,14 @@ export default {
   position: fixed;
   left: -270px;
   transition: opacity left .3s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .showMenu {
   left: 0;
   opacity: 1;
+  visibility: visible;
 }
 
 .hideNuxt {

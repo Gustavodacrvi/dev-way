@@ -1,9 +1,10 @@
 <template>
-  <div class="Input" :class="platform">
+  <div class="Input" :class="platform" @click="$emit('click')" @click.stop>
     <input
       class="input"
       autocomplete="off"
       :placeholder="placeholder"
+      :style="{width, padding}"
       @focus="focus = true"
       @blur="focus = false"
     >
@@ -15,7 +16,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  props: ['placeholder', 'type', 'borderLine'],
+  props: ['placeholder', 'type', 'borderLine', 'width', 'padding'],
   data() {
     return {
       focus: false,
@@ -32,6 +33,10 @@ export default {
 
 .Input {
   position: relative;
+}
+
+.Input .line {
+  opacity: 0;
 }
 
 .input {
@@ -56,6 +61,10 @@ export default {
   border: none;
   width: 120%;
   border-bottom: 1px solid var(--light-gray);
+}
+
+.form .line {
+  opacity: 0;
 }
 
 .Input.mobile .input {
