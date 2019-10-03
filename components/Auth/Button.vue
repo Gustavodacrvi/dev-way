@@ -14,7 +14,7 @@ export default {
 
 .Button {
   border: none;
-  padding: 14px 38px;
+  padding: 12px 38px;
   font-size: 1.1em;
   border-radius: 6px;
   cursor: pointer;

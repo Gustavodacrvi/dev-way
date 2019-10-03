@@ -12,7 +12,7 @@
 
 <script>
 
-import NavbarVue from '../components/Navbar.vue'
+import NavbarVue from '../components/Navbar/Navbar.vue'
 import PopupVue from '../components/Popup/Popup.vue'
 
 import { mapGetters, mapState } from 'vuex'

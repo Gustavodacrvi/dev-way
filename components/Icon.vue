@@ -1,7 +1,7 @@
 <template>
   <div class="Icon">
     <svg-icon class="icon" :name="name" :width="getWidth" :height="getHeight"/>  
-    <div class="title">
+    <div v-if="title" class="title">
       {{ title }}
     </div>
   </div>

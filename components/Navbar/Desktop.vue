@@ -1,5 +1,5 @@
 <template>
-  <div class="NavBar">
+  <div class="Desktop">
     <div class="wrapper">
       <div class="logo">DEV WAY</div>
       <div>
@@ -22,7 +22,7 @@
 
 <script>
 
-import InputVue from './Auth/Input.vue'
+import InputVue from './../Auth/Input.vue'
 
 export default {
   components: {
@@ -56,30 +56,21 @@ export default {
 
 <style scoped>
 
-.NavBar {
-  border-bottom: 1px solid var(--light-gray);
-  display: flex;
-  align-items: center;
-  background-color: white;
-  position: fixed;
-  height: 80px;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.logo {
-  font-size: 2.2em;
+.Desktop {
+  height: 100%;
 }
 
 .wrapper {
   margin: 0 100px;
   height: 100%;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.logo {
+  font-size: 2.2em;
 }
 
 .link {
