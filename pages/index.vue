@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <ButtonApp value="Venha se divertir!"/>
+    <ButtonApp value="Venha se divertir!" @click="$store.dispatch('pushPopup', {comp: 'Login'})"/>
 
     <div class="center">
       <PostCard class="post"

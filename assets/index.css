@@ -33,3 +33,12 @@ body, input, button, textarea, svg, path {
   background-color: white;
 }
 
+.page-enter, .page-leave-to {
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.page-leave, .page-enter-to {
+  opacity: 1;
+  transition: opacity .2s;
+}

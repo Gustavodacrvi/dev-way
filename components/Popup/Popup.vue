@@ -16,13 +16,14 @@ export default {
   },
   methods: {
     hide() {
-      this.$store.dispatch('popup/pushPopup', null)
+      if (this.$store.getters.isDesktop)
+        this.$store.dispatch('pushPopup', null)
+      else this.$router.go(-1)
     }
   },
   computed: {
     ...mapState({
-      popup: state => state.popup.popup,
-      width: state => state.popup.width,
+      popup: state => state.popup,
     }),
   }
 }

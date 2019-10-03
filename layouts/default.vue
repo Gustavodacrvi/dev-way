@@ -15,7 +15,7 @@
 import NavbarVue from '../components/Navbar.vue'
 import PopupVue from '../components/Popup/Popup.vue'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   components: {
@@ -23,26 +23,27 @@ export default {
     Popup: PopupVue,
   },
   created() {
-    setTimeout(() => {
-      this.$store.dispatch('popup/pushPopup', {comp: 'Login'})
-    }, 1000)
-  },
-  data() {
-    return {
-      asdf: 0,
+    if (process.browser) {
+      this.saveWidth()
+      window.addEventListener('resize', this.saveWidth)
     }
+  },
+  methods: {
+    saveWidth() {
+      this.$store.commit('saveWidth', document.body.offsetWidth)
+    },
   },
   computed: {
     ...mapGetters({
-      isPopupOpened: 'popup/isPopupOpened',
+      isPopupOpened: 'isPopupOpened',
     }),
+  },
+  watch: {
+    $route(newRoute, old) {
+      if (!this.$store.getters.isDesktop && old.name === 'popup')
+        this.$store.commit('pushPopup', null)
+    }
   }
-/*   fetch(context) {
-    this.asdf = 'nullaçlskjdf'
-    const saveScreenWidth = () => this.$store.dispatch('saveWidth')
-    saveScreenWidth()
-    window.addEventListener('resize', saveScreenWidth)
-  } */
 }
 
 </script>

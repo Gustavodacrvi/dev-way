@@ -14,7 +14,7 @@
           type="text"
         />
       </div>
-      <div class="line">
+      <div class="navbar-line">
       </div>
     </div>
   </div>
@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     moveLine() {
-      const line = document.getElementsByClassName('line')[0]
-      const active = document.getElementsByClassName('nuxt-link-exact-active')[0]
+      const line = this.$el.getElementsByClassName('navbar-line')[0]
+      const active = this.$el.getElementsByClassName('nuxt-link-exact-active')[0]
       
       if (line && active) {
           line.style.width = active.offsetWidth + 'px'
@@ -91,7 +91,7 @@ export default {
   font-size: 1.1em;
 }
 
-.line {
+.navbar-line {
   position: absolute;
   bottom: -2px;
   height: 3px;

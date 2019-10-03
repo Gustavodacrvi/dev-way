@@ -2,30 +2,37 @@
 const MIMIMUM_DESKTOP_WIDTH = 820
 
 export const state = () => ({
-  popup: null,
   width: 0,
+  popup: null,
 })
 
 export const getters = {
-  isPopupOpened(st) {
-    return st.popup !== null
-  },
   isDesktop(st) {
     return st.width > MIMIMUM_DESKTOP_WIDTH
+  },
+  platform(st, getters) {
+    if (getters.isDesktop) return 'desktop'
+    return 'mobile'
+  },
+  isPopupOpened(st) {
+    return st.popup !== null
   },
 }
 
 export const mutations = {
+  saveWidth(st, width) {
+    st.width = width
+  },
   pushPopup(state, popup) {
     state.popup = popup
-  },
-  saveWidth(st) {
-    st.width = document.offsetWidth
   },
 }
 
 export const actions = {
-  pushPopup({commit}, popup) {
+  pushPopup({commit, getters}, popup) {
     commit('pushPopup', popup)
+    if (!getters.isDesktop)
+      this.app.router.push('/popup')
   },
 }
+
