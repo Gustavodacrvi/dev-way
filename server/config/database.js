@@ -4,7 +4,8 @@ const db =mysql.createConnection({
   host: process.env.HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DATA
+  database: process.env.DATA,
+  insecureAuth: true
 })
 db.connect((err)=>{
   if(err) throw err;
