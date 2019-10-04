@@ -1,5 +1,10 @@
 const express = require('express')
 const consola = require('consola')
+const bodyParser = require('body-parser')
+const exphbs = require('express-handlebars')
+const path = require('path')
+const methodOverride = require('method-override')
+const redis = require('redis')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
