@@ -5,7 +5,7 @@
   "author": "Gustavo Vieira",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --ignore __tests__",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
@@ -20,8 +20,8 @@
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "mysql": "^2.17.1",
     "nuxt": "^2.0.0",
+    "pg": "^7.12.1",
     "redis": "^2.8.0",
     "sequelize": "^5.19.2"
   },
