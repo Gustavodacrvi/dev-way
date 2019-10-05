@@ -32,7 +32,7 @@ async function start () {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride)
-app.use('/popup', require('./routes/Users.js'))
+app.use('/', require('./routes/Users.js'))
   // Listen the server
   app.listen(port, host)
   consola.ready({

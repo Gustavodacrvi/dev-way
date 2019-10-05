@@ -1,8 +1,6 @@
 const routes = require('express').Router()
-const {User} = require('../models')
+
 const Controller = require('../controllers/User')
-
-routes.post('/sessions', Controller.store)
-
-
+routes.post('/signup', Controller.signUp)
+routes.post('/popup', Controller.login)
 module.exports = routes
