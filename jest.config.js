@@ -6,7 +6,7 @@ module.exports = {
     '^~/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js'
   },
-  testEnvirorment: 'node',
+  testEnvironment: 'node',
   testMatch: ["**/__tests__/**/*.test.js?(x)"],
   moduleFileExtensions: ['js', 'vue', 'json'],
   transform: {
