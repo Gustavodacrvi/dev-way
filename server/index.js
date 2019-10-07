@@ -1,5 +1,11 @@
+require('dotenv').config({
+  path: process.env.NODE_ENV == 'test' ? '.env.test' : '.env'
+})
 const express = require('express')
 const consola = require('consola')
+const bodyParser = require('body-parser')
+const path = require('path')
+const methodOverride = require('method-override')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
@@ -23,7 +29,10 @@ async function start () {
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
-
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(methodOverride)
+app.use('/', require('./routes/Users.js'))
   // Listen the server
   app.listen(port, host)
   consola.ready({

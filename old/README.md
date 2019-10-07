@@ -1,2 +1,0 @@
-# informaticos
-Blog.
