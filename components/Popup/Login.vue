@@ -41,13 +41,22 @@ import ButtonVue from '../Auth/Button.vue'
 
 import { mapGetters } from 'vuex'
 
+import axios from 'axios'
+
 export default {
   components: {
     InputApp: InputVue,
     Button: ButtonVue,
   },
+  methods: {
+    login() {
+      axios.post('/login', {
+        name,
+      })
+    }
+  },
   computed: {
-    ...mapGetters(['platform'])
+    ...mapGetters(['platform']),
   }
 }
 
