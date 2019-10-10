@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="header">
         <h2 class="title">Bem vindo,</h2>
-        <span class="sub-title">insira as informações para continuar.</span>
+        <span class="sub-title">insira as informações para criar uma conta.</span>
       </div>
       <div>
         <div style="height: 30px"></div>
@@ -25,11 +25,21 @@
             :borderLine="true"
           />
         </div>
+        <div class="inp-margin" style="height: 10px"></div>
+        <div>
+          <InputApp
+            v-model="confirm"
+            class="form"
+            placeholder="Confirme a senha:"
+            type="password"
+            :borderLine="true"
+          />
+        </div>
       </div>
       <div>
         <div style="height: 30px"></div>
         <div class="center">
-          <Button class="btn" value="Venha se divertir!"/>
+          <Button class="btn" value="Venha se divertir!" @click="login"/>
         </div>
       </div>
     </div>
@@ -54,13 +64,48 @@ export default {
     return {
       name: '',
       password: '',
+      confirm: '',
     }
   },
   methods: {
     login() {
-      axios.post('/login', {
-        name,
-      })
+      const { name, password, confirm } = this
+      const toast = (toast) => {
+        this.$store.commit('pushToast', toast)
+      }
+
+      if (name === '' || password === '' || confirm === '')
+        toast({
+          name: 'Preenche a porra dos campos.',
+          seconds: 3,
+          type: 'error'
+        })
+      else if (password.length > 70 || name.length > 70)
+        toast({
+          name: 'O número máximo de caracteres é 70 seu porra.',
+          seconds: 3,
+          type: 'error'
+        })
+      else if (password !== confirm)
+        toast({
+          name: 'As senhas não batem porra.',
+          seconds: 3,
+          type: 'error'
+        })
+      else {
+        axios.post('/signup', {
+          password,
+          username: name,
+        }).then((res) => {
+          console.log('then', res)
+        }).catch((err) => {
+          toast({
+            name: err,
+            seconds: 3,
+            type: 'erro'
+          })
+        })
+      }
     }
   },
   computed: {

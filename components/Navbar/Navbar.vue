@@ -1,7 +1,7 @@
 <template>
   <div class="NavBar" :class="{hide: !showMobileMenu}">
-    <Desktop v-if="isDesktop"/>
-    <mobile v-else :show='showMobileMenu' @open-menu="$emit('open-menu')"/>
+    <Desktop v-show="isDesktop"/>
+    <Mobile v-show="!isDesktop" :show='showMobileMenu' @open-menu="$emit('open-menu')"/>
   </div>
 </template>
 

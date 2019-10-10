@@ -1,6 +1,7 @@
 <template>
   <div class="Input" :class="platform" @click="$emit('click')" @click.stop>
     <input
+      v-model="str"
       class="input"
       autocomplete="off"
       :placeholder="placeholder"
@@ -16,14 +17,20 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  props: ['placeholder', 'type', 'borderLine', 'width', 'padding'],
+  props: ['placeholder', 'type', 'borderLine', 'width', 'padding', 'value'],
   data() {
     return {
       focus: false,
+      str: '',
     }
   },
   computed: {
     ...mapGetters(['platform'])
+  },
+  watch: {
+    str() {
+      this.$emit('input', this.str)
+    }
   }
 }
 

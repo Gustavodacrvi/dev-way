@@ -5,6 +5,7 @@
     <transition name="fade">
       <Popup v-if="isPopupOpened"/>
     </transition>
+    <Toast/>
 
     <div @click="menu = false">
       <nuxt class="nuxt" :class="{hideNuxt: menu}"/>
@@ -17,6 +18,7 @@
 
 import NavbarVue from '../components/Navbar/Navbar.vue'
 import PopupVue from '../components/Popup/Popup.vue'
+import ToastVue from '../components/Toast.vue'
 
 import { mapGetters, mapState } from 'vuex'
 import MenuVue from '../components/Navbar/Menu.vue'
@@ -26,6 +28,7 @@ export default {
     NavBar: NavbarVue,
     Popup: PopupVue,
     MenuApp: MenuVue,
+    Toast: ToastVue,
   },
   data() {
     return {

@@ -32,8 +32,7 @@ export default {
   display: flex;
   align-items: center;
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 0; 
   height: 100%;
   width: 270px;
 }

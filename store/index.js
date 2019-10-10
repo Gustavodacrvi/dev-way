@@ -4,6 +4,7 @@ const MIMIMUM_DESKTOP_WIDTH = 820
 export const state = () => ({
   width: 0,
   popup: null,
+  toasts: [],
 })
 
 export const getters = {
@@ -25,6 +26,13 @@ export const mutations = {
   },
   pushPopup(state, popup) {
     state.popup = popup
+  },
+  moveToastQueue(state) {
+    state.toasts.pop()
+  },
+  pushToast(state, toast) {
+    console.log(state)
+    state.toasts.unshift(toast)
   },
 }
 
