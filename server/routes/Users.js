@@ -1,15 +1,11 @@
-const {Pool} = require('pg')
-const config = require('../config/database')
-const pool = new Pool(config)
 const routes = require('express').Router()
+const controller = require('../controllers/User')
 routes.post('/signup', async(req, res)=>{
     const {name, password, email } = req.body
-    const {rows} = await pool.query(`INSERT INTO Users(name, password, email) VALUES(${name}, ${password}, ${email})`)
-    console.log(rows)
+    await controller.signup(name, password, email, res)
 })
-routes.post('/popup', async (req, res)=>{
-    const {name, password, email} = req.body
-    const {rows} = await pool.query(`SELECT * FROM Users WHERE id=${name} AND password=${password} AND email=${email}`)
-    console.log(rows)
+routes.post('/login', async (req, res)=>{
+    const {name, password} = req.body
+    await controller.login(name, password, res)
 })
 module.exports = routes
