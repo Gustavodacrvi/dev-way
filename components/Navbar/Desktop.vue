@@ -1,7 +1,7 @@
 <template>
   <div class="Desktop">
     <div class="wrapper">
-      <div class="logo">DEV WAY</div>
+      <div class="logo"><span>DEV WAY</span></div>
       <div>
         <nuxt-link class="link" to="/">Home</nuxt-link>
         <nuxt-link class="link" to="/posts">Posts</nuxt-link>
@@ -14,8 +14,7 @@
           type="text"
         />
       </div>
-      <div class="navbar-line">
-      </div>
+      <div class="navbar-line"></div>
     </div>
   </div>
 </template>
@@ -29,8 +28,10 @@ export default {
     InputApp: InputVue,
   },
   mounted() {
-    this.moveLine()
-    window.addEventListener('resize', this.moveLine)
+    if (process.browser) {
+      this.moveLine()
+      window.addEventListener('resize', this.moveLine)
+    }
   },
   methods: {
     moveLine() {
