@@ -1,14 +1,14 @@
 const db = require('../config/database')
 
-function registerUser(name, pass, email, res){
-    let sql = `INSERT INTO Users(name, pass, email) VALUES (${name}, ${pass}, ${email})`
+function registerUser(name, pass, res){
+    let sql ="INSERT INTO Users(name, password) VALUES("+name+","+password+")"
     db.query(sql, (err, rows)=>{
         if (err) console.log(err)
         else res.send(rows)
     })
 }
 function loginUser(name, pass, res){
-    db.query("SELECT * FROM `Users` WHERE `login`=? and `pass`=? ORDER BY `login` asc LIMIT 1", [name, pass], (err, rows)=>{
+    db.query("SELECT * FROM `Users` WHERE `name`=? and `password`=? ORDER BY `name` asc LIMIT 1", [name, pass], (err, rows)=>{
         if(err) console.log('Erro ao logar')
         else res.send(rows)
     })
