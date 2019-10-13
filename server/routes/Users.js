@@ -2,7 +2,7 @@ const routes = require('express').Router()
 const controller = require('../controllers/User')
 routes.post('/signup', async(req, res)=>{
     const {name, password} = req.body
-    await controller.signup(name, password, email, res)
+    await controller.signup(name, password, res)
 })
 routes.post('/login', async (req, res)=>{
     const {name, password} = req.body

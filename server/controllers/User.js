@@ -1,7 +1,7 @@
 const db = require('../config/database')
 
 function registerUser(name, pass, res){
-    let sql ="INSERT INTO Usuarios(login, senha) VALUES("+name+","+password+")"
+    let sql ="INSERT INTO Usuarios(login, senha) VALUES("+name+","+pass+")"
     db.query(sql, (err, rows)=>{
         if (err) console.log(err)
         else res.send(rows)
