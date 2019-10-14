@@ -3,6 +3,7 @@
     <input
       class="input"
       autocomplete="off"
+      v-model="str"
       :placeholder="placeholder"
       :style="{width, padding}"
       @focus="focus = true"
@@ -16,14 +17,20 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  props: ['placeholder', 'type', 'borderLine', 'width', 'padding'],
+  props: ['placeholder', 'value', 'type', 'borderLine', 'width', 'padding'],
   data() {
     return {
       focus: false,
+      str: '',
     }
   },
   computed: {
     ...mapGetters(['platform'])
+  },
+  watch: {
+    str() {
+      this.$emit('input', this.str)
+    }
   }
 }
 

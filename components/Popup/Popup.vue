@@ -7,12 +7,14 @@
 <script>
 
 import LoginVue from './Login.vue'
+import SignupVue from './Signup.vue'
 
 import { mapState, mapGetters } from 'vuex'
 
 export default {
   components: {
     Login: LoginVue,
+    Signup: SignupVue,
   },
   methods: {
     hide() {
