@@ -15,7 +15,7 @@ async function loginUser(name, pass, res){
         else{
             const user = rows[0]
             const bcrypt = require('bcryptjs')
-            if (bcrypt.compare(pass, user.senha,()=>{
+            if (bcypt.compare(pass, user.senha,()=>{
                 return true
             }) == true){
                 res.send(user)
