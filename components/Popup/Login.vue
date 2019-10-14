@@ -9,6 +9,7 @@
         <div style="height: 30px"></div>
         <div>
           <InputApp
+            v-model="name"
             class="form"
             placeholder="Nome de usuário:"
             type="text"
@@ -17,6 +18,7 @@
         <div class="inp-margin" style="height: 10px"></div>
         <div>
           <InputApp
+            v-model="password"
             class="form"
             placeholder="Senha:"
             type="text"
@@ -47,6 +49,12 @@ export default {
   components: {
     InputApp: InputVue,
     Button: ButtonVue,
+  },
+  data() {
+    return {
+      name: '',
+      password: '',
+    }
   },
   methods: {
     login() {

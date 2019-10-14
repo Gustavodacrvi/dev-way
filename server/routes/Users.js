@@ -1,6 +1,11 @@
 const routes = require('express').Router()
-
-const Controller = require('../controllers/User')
-routes.post('/signup', Controller.signUp)
-routes.post('/popup', Controller.login)
+const controller = require('../controllers/User')
+routes.post('/signup', async(req, res)=>{
+    const {name, password} = req.body
+    await controller.signup(name, password, res)
+})
+routes.post('/login', async (req, res)=>{
+    const {name, password} = req.body
+    await controller.login(name, password, res)
+})
 module.exports = routes

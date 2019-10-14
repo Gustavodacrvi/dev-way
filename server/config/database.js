@@ -1,17 +1,14 @@
-require('dotenv').config({
-    path: process.env.NODE_ENV == 'test' ? '.env.test' : '.env'
-  })
-module.exports = {
-    host: process.env.DB_HOST,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    dialect: process.env.DB_DIALECT || 'postgres' ,
-    logging: false,
-    storage:'./__tests__/database.sqlite',
-    define: {
-        timestamps: true,
-        underscored: true,
-        underscoredAll: true
-    }
+const config = {
+    user: 'test',
+    host: 'localhost',
+    database: 'devwaytest',
+    password: 'DevWay0*',
 }
+const mysql = require('mysql')
+
+const db = mysql.createConnection(config)
+db.connect((err)=>{
+    if(err) console.log(err)
+    else console.log('MySQL connected')
+})
+module.exports = db

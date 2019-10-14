@@ -1,18 +1,29 @@
-const {User} = require('../models')
-class Controller{
-    static async signUp(req, res){
-        const user = await User.create(req.body)
-    }
-    static async login(req, res){
-        const {email, password} = req.body
-        const user = await User.findOne({where: {email}})
-        if(!user){
-            return res.status(401).json({message: 'Usuário não encontrado'})
-        }
-        if(!await user.checkPassword(password)){
-            return res.status(401).json({message: 'Senha inválida'})
-        }
-        return res.status(200).send()
-    }
+const db = require('../config/database')
+
+async function registerUser(name, pass, res){
+    const bcrypt = require('bcryptjs')
+    const hash = await bcrypt.hash(pass, 8)
+    let sql ="INSERT INTO Usuarios(login, senha) VALUES("+name+","+hash+")"
+    db.query(sql, (err, rows)=>{
+        if (err) console.log(err)
+        else res.send(rows)
+    })
 }
-module.exports = Controller
+async function loginUser(name, pass, res){
+    db.query("SELECT * FROM `Usuarios` WHERE `login`=? ORDER BY `login` asc LIMIT 1", [name], (err, rows)=>{
+        if(err) console.log('Erro ao logar')
+        else{
+            const user = rows[0]
+            const bcrypt = require('bcryptjs')
+            if (bcrypt.compare(pass, user.senha,()=>{
+                return true
+            }) == true){
+                res.send(user)
+            }
+        }
+    })
+}
+module.exports = {
+    login: loginUser,
+    signup: registerUser
+}

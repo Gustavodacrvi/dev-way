@@ -1,6 +1,7 @@
 <template>
   <div class="Input" :class="platform" @click="$emit('click')" @click.stop>
     <input
+      v-model="str"
       class="input"
       autocomplete="off"
       v-model="str"

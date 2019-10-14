@@ -1,7 +1,7 @@
 <template>
   <div class="index">
-    <ButtonApp value="Venha se divertir!" @click="$store.dispatch('pushPopup', {comp: 'Login'})"/>
-    <ButtonApp value="Venha se divertir signup!" @click="$store.dispatch('pushPopup', {comp: 'Signup'})"/>
+    <ButtonApp value="Sign in" @click="$store.dispatch('pushPopup', {comp: 'Login'})"/>
+    <ButtonApp value="Sign up" @click="$store.dispatch('pushPopup', {comp: 'Signup'})"/>
 
     <div class="center">
       <PostCard class="post"
