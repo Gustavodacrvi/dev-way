@@ -1,4 +1,5 @@
 <template>
+
   <div class="Login card rb" :class="platform" @click.stop>
     <div class="wrapper">
       <div class="header">
@@ -10,6 +11,7 @@
         <div>
           <InputApp
             v-model="name"
+
             class="form"
             placeholder="Nome de usuário:"
             type="text"
@@ -39,7 +41,9 @@
       <div>
         <div style="height: 30px"></div>
         <div class="center">
+
           <Button class="btn" value="Venha se divertir!" @click="login"/>
+
         </div>
       </div>
     </div>
@@ -62,9 +66,9 @@ export default {
   },
   data() {
     return {
+
       name: '',
-      password: '',
-      confirm: '',
+
     }
   },
   methods: {
@@ -106,6 +110,9 @@ export default {
           })
         })
       }
+      /* axios.post('/login', {
+        name,
+      }) */
     }
   },
   computed: {
